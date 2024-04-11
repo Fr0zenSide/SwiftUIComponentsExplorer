@@ -12,6 +12,7 @@ struct ViewThatFitsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            SearchWithTokenView()
         }
     }
 }
