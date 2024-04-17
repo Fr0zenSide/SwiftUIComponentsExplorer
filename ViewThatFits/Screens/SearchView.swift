@@ -60,6 +60,23 @@ struct SearchView: View {
         }
     }
     
+    func trim(_ query: String) -> String {
+        var trimmingChar = CharacterSet()
+        print("0 trimmingChar:", trimmingChar)
+//        trimmingChar.formUnion(CharacterSet.symbols) // emoji
+//        print("1 trimmingChar:", trimmingChar)
+//        trimmingChar.formUnion(CharacterSet.punctuationCharacters)
+//        print("2 trimmingChar:", trimmingChar)
+        trimmingChar.formUnion(CharacterSet.whitespacesAndNewlines)
+        print("3 trimmingChar:", trimmingChar)
+//        let characters = CharacterSet.decimalDigits.getCharacters()
+        let characters = trimmingChar.getCharacters()
+        print("4 trimmingChar characters:", characters.joined(separator: ",") )
+        let trimQuery = query.trimmingCharacters(in: trimmingChar)
+        print("5 query: \(query) :: trimQuery:", trimQuery)
+        return trimQuery
+    }
+    
     @State private var searchText = ""
     @State private var searchIsActive = false
     
@@ -291,4 +308,28 @@ struct SearchView: View {
     NavigationStack {
         SearchView()
     }
+}
+
+
+extension CharacterSet {
+    
+    func getCharacters() -> [String] {
+        let characterSet = self as NSCharacterSet
+        var characters: [String] = []
+        for plane:UInt8 in 0..<17 {
+            if characterSet.hasMemberInPlane(plane) {
+                let planeStart = UInt32(plane) << 16
+                let nextPlaneStart = (UInt32(plane) + 1) << 16
+                for char: UTF32Char in planeStart..<nextPlaneStart {
+                    if characterSet.longCharacterIsMember(char) {
+                        if let unicodeCharacter = UnicodeScalar(char) {
+                            characters.append(String(unicodeCharacter))
+                        }
+                    }
+                }
+            }
+        }
+        return characters
+    }
+    
 }

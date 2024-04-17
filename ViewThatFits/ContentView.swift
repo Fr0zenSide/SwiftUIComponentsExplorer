@@ -10,14 +10,19 @@ import SwiftUI
 enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseIterable {
     var id: String { rawValue }
     
-    case viewThatFits, geometryReader3d, scrollViewReader, gesture, 
+    case viewThatFits, 
+         geometryReader, geometryReader3d, scrollViewReader,
+         gesture,
          search, tokenSearch,
-         animation, phaseAnimator, presentDetail
+         animation, phaseAnimator, presentDetail,
+         toast
     
     var description: String {
         switch self {
         case .viewThatFits:
             "ViewThatFits {} layout"
+        case .geometryReader:
+            "ScrollView with adaptive header"
         case .geometryReader3d:
             "3D Geometry Reader in scrollView"
         case .scrollViewReader:
@@ -34,6 +39,8 @@ enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseItera
             "Phase Animators"
         case .presentDetail:
             "Present detail with anim"
+        case .toast:
+            "Show toasts"
         }
     }
     
@@ -42,6 +49,8 @@ enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseItera
         switch self {
         case .viewThatFits:
             ViewThatFitsView()
+        case .geometryReader:
+            HeaderAndScrollView()
         case .geometryReader3d:
             GeometryReader3dView()
         case .scrollViewReader:
@@ -58,6 +67,8 @@ enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseItera
             PhaseAnimatorView()
         case .presentDetail:
             PresentDetailView()
+        case .toast:
+            PresentToastView()
         }
     }
 }

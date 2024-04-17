@@ -63,6 +63,7 @@ struct PresentDetailView: View {
     
     // MARK: - tab I
     
+    @State private var slowAnimations = false
     @State private var showPreview = false {
         didSet {
             if showPreview == false {
@@ -72,62 +73,81 @@ struct PresentDetailView: View {
             }
         }
     }
+//    @Binding var hiddingPreview = Binding(
+//        get: { !showPreview },
+//        set: { newValue in /* implement */ }
+//    )
+    
     @State private var showBg = false
     @Namespace private var animation
     
-    private let columns = [GridItem(.adaptive(minimum: 75, maximum: 90))]
+    private let columns = [GridItem(.adaptive(minimum: 80, maximum: 120))]
+    @State private var currentImageTap = 1
         
     @ViewBuilder
     var testCase1: some View {
-        ZStack {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(1...5, id: \.self) { _ in
-                    contentView
-                        .onTapGesture {
-                            withAnimation {
-                                showPreview.toggle()
+        VStack {
+            Toggle("Slow Animations", isOn: $slowAnimations)
+            ZStack {
+                contentView
+                    .padding()
+                
+//                if showPreview {
+                    PresentContainerView(isPresented: $showPreview) {
+                        //                    ContainerRelativeShape()
+                        //                    VStack {
+                        imageView
+                        //                        .position(/*@START_MENU_TOKEN@*/CGPoint(x: 10.0, y: 10.0)/*@END_MENU_TOKEN@*/)
+                        //                    }
+                            .onAppear {
+                                showBg = true
                             }
-                        }
-                }
+                        //                        .background(
+                        //                            Rectangle()
+                        //                                .fill(.thinMaterial)
+                        //                                .opacity(showBg ? 1 : 0)
+                        //                                .ignoresSafeArea()
+                        //                                .onTapGesture {
+                        //                                    withAnimation {
+                        //                                        showPreview.toggle()
+                        //                                    }
+                        //                                })
+                    }
+                    .hidden($showPreview.not)
+//                }
             }
-            if showPreview {
-                PresentContainerView(isPresented: $showPreview) {
-                    imageView
-                        .onAppear {
-                            showBg = true
-                        }
-                        .background(
-                            Rectangle()
-                                .fill(.thinMaterial)
-                                .opacity(showBg ? 1 : 0)
-                                .ignoresSafeArea()
-                                .onTapGesture {
-                                    withAnimation {
-                                        showPreview.toggle()
-                                    }
-                                })
-                }
-            }
+            .animation(.default.speed(slowAnimations ? 0.2 : 1), value: showPreview)
         }
     }
     
     @ViewBuilder
     var contentView: some View {
         VStack {
-            imageBg
-//                .clipped()
-//                    .clipShape(RoundedRectangle(cornerRadius: 25))
-            //                .overlay {
-            //                    RoundedRectangle(cornerRadius: 25)
-            //                        .fill(.black.opacity(0.2))
-            //                }
-//                .shadow(color: .gray, radius: 10, x: 8, y: 15)
-                .frame(minWidth: 70, maxWidth: 450, minHeight: 60, maxHeight: 350)
-                .padding([.leading, .trailing], 20)
-                .matchedGeometryEffect(id: "image",
-                                       in: animation,
-                                       properties: .frame)
-                .hidden($showPreview)
+            LazyVGrid(columns: columns, spacing: 0) {
+//            VStack {
+//                ScrollView {
+                ForEach(1...12, id: \.self) { index in
+                    imageBg
+                        .cornerRadius(5)
+//                        .id("image-\(index)")
+                        .shadow(color: .gray, radius: 10, x: 4, y: 4)
+//                        .padding([.leading, .trailing], 20)
+                        .matchedGeometryEffect(id: "image-\(index)",
+                                               in: animation)//,
+//                                               properties: .frame)
+//                        .frame(minWidth: 70, maxWidth: 450, minHeight: 60, maxHeight: 350)
+                        .frame(width: 90, height: 60)
+                        .aspectRatio(contentMode: .fit)
+                        .opacity((showPreview && currentImageTap == index) ? 0 : 1)
+//                        .hidden($showPreview && currentImageTap == index)
+                        .onTapGesture {
+                            withAnimation {
+                                currentImageTap = index
+                                showPreview.toggle()
+                            }
+                        }
+                }
+            }
             
             Text("My super legend")
                 .font(.headline)
@@ -141,25 +161,35 @@ struct PresentDetailView: View {
     var imageBg: some View {
         Image("background")
             .resizable()
-            .aspectRatio(contentMode: .fit)
-            .cornerRadius(20)
-            .shadow(color: .gray, radius: 10, x: 8, y: 15)
+//            .aspectRatio(contentMode: .fit)
+            .border(.yellow, width: 1)
     }
     
     @ViewBuilder
     var imageView: some View {
         VStack {
             imageBg
+//                .scaledToFit()
+                .cornerRadius(20)
+//                .id("image-\(currentImageTap)")
+//                .shadow(color: .gray, radius: 10, x: 8, y: 15)
+                .border(.pink, width: 1)
+                
+                .matchedGeometryEffect(id: "image-\(currentImageTap)",
+                                       in: animation,
+//                                       properties: .frame,
+                                       isSource: false)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
                 .padding()
                 .closeDraggable(stopToDisplay: $showPreview)
 //                            .shadow(color: .gray, radius: 10, x: 8, y: 15)
-                .matchedGeometryEffect(id: "image",
-                                       in: animation,
-                                       properties: .frame,
-                                       isSource: false)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding([.leading, .trailing], 5)
+                
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                .padding([.leading, .trailing], 5)
         }
+        .border(.red, width: 1)
     }
     
     
@@ -188,19 +218,17 @@ struct PresentDetailView: View {
                         }
                         .stacked(at: index, in: cards.count)
                     }
-                 
-                    
                     
                     if accessibilityDifferentiateWithoutColor/* || true*/ {
                         accessibilityIndicatorView
                     }
                 }
 //                .border(.pink, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                
             }
             .overlay(
                 accessibilityIndicatorView
             )
+//            // Background don't fit properly images
 //            .background(
 //                Image(.background)
 //                    .resizable()
