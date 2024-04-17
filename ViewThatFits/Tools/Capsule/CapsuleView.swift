@@ -23,7 +23,7 @@ struct CapsuleView: View {
             Spacer()
             
         }
-        .caps($capses)
+        .caps($capses, orientation: .top)
     }
 }
 
@@ -77,9 +77,15 @@ struct CapsItem: Identifiable {
     var timing: CapsTime = .medium
 }
 
+enum CapsOrientation {
+    case top, bottom
+}
+
 struct CapsModifier: ViewModifier {
     
     @Binding var capses: [CapsItem]
+    var orientation: CapsOrientation
+    
     /*
     func body(content: Content) -> some View {
         ZStack {
@@ -119,10 +125,10 @@ struct CapsModifier: ViewModifier {
                     
                     ZStack {
                         Text("\(capses.count)")
-                            .offset(y: -100)
+                            .offset(y: orientation == .bottom ? -100 : 100)
                         
                         ForEach(capses) { caps in
-                            CapsView(size: size, item: caps, onRemove: removeCaps)
+                            CapsView(size: size, item: caps, orientation: orientation, onRemove: removeCaps)
                                 .scaleEffect(scale(caps))
                                 .offset(y: offsetY(caps))
                                 .zIndex(capsIndex(caps))
@@ -133,8 +139,9 @@ struct CapsModifier: ViewModifier {
 //                                .transition(bottomTransition)
                         }
                     }
-                    .padding(.bottom, safeArea.top == .zero ? 15 : 10)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .padding(.top, safeArea.top == .zero ? 10 : 15)
+                    .padding(.bottom, safeArea.top == .zero ? 10 : 15)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: orientation == .bottom ? .bottom : .top)
 //                    .background(.purple.opacity(0.3))
                 }
             }
@@ -163,18 +170,20 @@ struct CapsModifier: ViewModifier {
 }
 
 extension View {
-    func caps(_ capses: Binding<[CapsItem]>) -> some View {
-        self.modifier(CapsModifier(capses: capses))
+    func caps(_ capses: Binding<[CapsItem]>, orientation: CapsOrientation = .bottom) -> some View {
+        self.modifier(CapsModifier(capses: capses, orientation: orientation))
     }
 }
 
 fileprivate struct CapsView: View {
     var size: CGSize
     var item: CapsItem
+    var orientation: CapsOrientation
     var onRemove: ((_ item: CapsItem) -> Void)? = nil
     
     @State private var delayTask: DispatchWorkItem?
     @State private var displayed: Bool = false
+    private var offsetYAnim: CGFloat { orientation == .bottom ? 150 : -150 }
     
     var body: some View {
         Label(item.title, systemImage: item.symbol ?? "")
@@ -190,7 +199,7 @@ fileprivate struct CapsView: View {
                 in: .capsule
             )
             .contentShape(.capsule)
-            .offset(y: displayed ? 0 : 150)
+            .offset(y: displayed ? 0 : offsetYAnim)
             .opacity(displayed ? 1 : 0)
             .gesture(
                 DragGesture(minimumDistance: 0)
@@ -199,7 +208,8 @@ fileprivate struct CapsView: View {
                         let endY = value.translation.height
                         let velocityY = value.velocity.height
                         
-                        if endY + velocityY > 100 {
+                        print("velo (\(endY),\(velocityY)):", (endY + velocityY))
+                        if endY + velocityY > 100 || endY + velocityY < -100 {
                             removeCaps()
                         }
                     })
@@ -220,7 +230,7 @@ fileprivate struct CapsView: View {
                 }
             }
             .frame(maxWidth: size.width * 0.7)
-            .transition(.offset(y: 150))
+            .transition(.offset(y: offsetYAnim))
             .transition(.opacity)
     }
     
@@ -230,6 +240,7 @@ fileprivate struct CapsView: View {
         }
         
         withAnimation(.snappy) {
+            displayed = false
             onRemove?(item)
         }
     }

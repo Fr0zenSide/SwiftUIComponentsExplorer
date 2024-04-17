@@ -84,7 +84,17 @@ struct PresentToastView: View {
     
     @ViewBuilder
     var testCase2: some View {
-        EmptyView()
+        VStack {
+            Spacer()
+            
+            Button("Show new toast") {
+                capses.present(capses.randomSample)
+            }
+            
+            Spacer()
+
+        }
+        .caps($capses, orientation: .top)
     }
     
     
