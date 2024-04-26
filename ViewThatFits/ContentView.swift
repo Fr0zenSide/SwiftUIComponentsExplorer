@@ -10,7 +10,8 @@ import SwiftUI
 enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseIterable {
     var id: String { rawValue }
     
-    case viewThatFits, 
+    case buttons,
+         viewThatFits,
          geometryReader, geometryReader3d, scrollViewReader,
          gesture,
          search, tokenSearch,
@@ -19,6 +20,8 @@ enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseItera
     
     var description: String {
         switch self {
+        case .buttons:
+            "Buttons 😄"
         case .viewThatFits:
             "ViewThatFits {} layout"
         case .geometryReader:
@@ -47,6 +50,8 @@ enum NavItem: String, Identifiable, Hashable, CustomStringConvertible, CaseItera
     @ViewBuilder
     var body: some View {
         switch self {
+        case .buttons:
+            ButtonsView()
         case .viewThatFits:
             ViewThatFitsView()
         case .geometryReader:

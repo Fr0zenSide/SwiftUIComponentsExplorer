@@ -22,7 +22,7 @@
 		801053092BC5801900C042A8 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053082BC5801900C042A8 /* TemplateView.swift */; };
 		8010530B2BC5A19700C042A8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010530A2BC5A19700C042A8 /* SearchView.swift */; };
 		8010530D2BC5B45800C042A8 /* SearchWithTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010530C2BC5B45800C042A8 /* SearchWithTokenView.swift */; };
-		801053112BC645F600C042A8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053102BC645F600C042A8 /* View+Extensions.swift */; };
+		801053112BC645F600C042A8 /* ViewAnim+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053102BC645F600C042A8 /* ViewAnim+Extensions.swift */; };
 		801053142BC6474800C042A8 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053132BC6474800C042A8 /* AnimationView.swift */; };
 		801053162BC65AA100C042A8 /* AnimatableVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053152BC65AA100C042A8 /* AnimatableVector.swift */; };
 		801053182BC65B1C00C042A8 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053172BC65B1C00C042A8 /* LineChart.swift */; };
@@ -31,6 +31,14 @@
 		8010531E2BC6D95C00C042A8 /* DraggableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010531D2BC6D95C00C042A8 /* DraggableModifier.swift */; };
 		801053202BC6D9F900C042A8 /* PresentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010531F2BC6D9F900C042A8 /* PresentContainerView.swift */; };
 		801053222BC6FB3400C042A8 /* HiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801053212BC6FB3400C042A8 /* HiddenModifier.swift */; };
+		8015779C2BDB811000E53508 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8015779B2BDB811000E53508 /* ButtonsView.swift */; };
+		801577A02BDB824100E53508 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8015779D2BDB818E00E53508 /* MainButtonStyle.swift */; };
+		801577A22BDB88D900E53508 /* GlowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A12BDB88D900E53508 /* GlowModifier.swift */; };
+		801577A42BDB8C5A00E53508 /* CapsuleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A32BDB8C5A00E53508 /* CapsuleProgressView.swift */; };
+		801577A62BDB8D8900E53508 /* CapsuleProgress2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A52BDB8D8900E53508 /* CapsuleProgress2View.swift */; };
+		801577A82BDB9B5900E53508 /* LoadingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */; };
+		801577AA2BDBF7AF00E53508 /* EncapsulateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */; };
+		801577AC2BDC079300E53508 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577AB2BDC079300E53508 /* View+Extensions.swift */; };
 		80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775022BC92BF600333802 /* Binding+Extensions.swift */; };
 		80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775042BC9929800333802 /* HeaderAndScrollView.swift */; };
 		80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775142BCFFADE00333802 /* PresentToastView.swift */; };
@@ -73,7 +81,7 @@
 		801053082BC5801900C042A8 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		8010530A2BC5A19700C042A8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8010530C2BC5B45800C042A8 /* SearchWithTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWithTokenView.swift; sourceTree = "<group>"; };
-		801053102BC645F600C042A8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		801053102BC645F600C042A8 /* ViewAnim+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewAnim+Extensions.swift"; sourceTree = "<group>"; };
 		801053132BC6474800C042A8 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		801053152BC65AA100C042A8 /* AnimatableVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableVector.swift; sourceTree = "<group>"; };
 		801053172BC65B1C00C042A8 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
@@ -82,6 +90,14 @@
 		8010531D2BC6D95C00C042A8 /* DraggableModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableModifier.swift; sourceTree = "<group>"; };
 		8010531F2BC6D9F900C042A8 /* PresentContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentContainerView.swift; sourceTree = "<group>"; };
 		801053212BC6FB3400C042A8 /* HiddenModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenModifier.swift; sourceTree = "<group>"; };
+		8015779B2BDB811000E53508 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		8015779D2BDB818E00E53508 /* MainButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		801577A12BDB88D900E53508 /* GlowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowModifier.swift; sourceTree = "<group>"; };
+		801577A32BDB8C5A00E53508 /* CapsuleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProgressView.swift; sourceTree = "<group>"; };
+		801577A52BDB8D8900E53508 /* CapsuleProgress2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProgress2View.swift; sourceTree = "<group>"; };
+		801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonStyle.swift; sourceTree = "<group>"; };
+		801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncapsulateModifier.swift; sourceTree = "<group>"; };
+		801577AB2BDC079300E53508 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../../../../23 - Mayafit/Maya/MayaFit/Core/Tools/Extensions/View+Extensions.swift"; sourceTree = "<group>"; };
 		80D775022BC92BF600333802 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		80D775042BC9929800333802 /* HeaderAndScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndScrollView.swift; sourceTree = "<group>"; };
 		80D775142BCFFADE00333802 /* PresentToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentToastView.swift; sourceTree = "<group>"; };
@@ -176,7 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				801053032BC57C2F00C042A8 /* RomanNumeralFormatter.swift */,
-				801053102BC645F600C042A8 /* View+Extensions.swift */,
+				8015779F2BDB822000E53508 /* ViewModifiers */,
+				801053102BC645F600C042A8 /* ViewAnim+Extensions.swift */,
+				801577AB2BDC079300E53508 /* View+Extensions.swift */,
 				801053152BC65AA100C042A8 /* AnimatableVector.swift */,
 				801053172BC65B1C00C042A8 /* LineChart.swift */,
 				8010531D2BC6D95C00C042A8 /* DraggableModifier.swift */,
@@ -184,6 +202,9 @@
 				801053212BC6FB3400C042A8 /* HiddenModifier.swift */,
 				80D775022BC92BF600333802 /* Binding+Extensions.swift */,
 				80D775162BD039EB00333802 /* Capsule */,
+				801577A12BDB88D900E53508 /* GlowModifier.swift */,
+				801577A32BDB8C5A00E53508 /* CapsuleProgressView.swift */,
+				801577A52BDB8D8900E53508 /* CapsuleProgress2View.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -191,6 +212,7 @@
 		801053122BC6472C00C042A8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8015779B2BDB811000E53508 /* ButtonsView.swift */,
 				801052FB2BC532EF00C042A8 /* ViewThatFitsView.swift */,
 				801052FD2BC5358000C042A8 /* GeometryReader3dView.swift */,
 				801053012BC538FD00C042A8 /* ScrollViewReaderView.swift */,
@@ -204,6 +226,16 @@
 				80D775142BCFFADE00333802 /* PresentToastView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		8015779F2BDB822000E53508 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				8015779D2BDB818E00E53508 /* MainButtonStyle.swift */,
+				801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */,
+				801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 		80D775162BD039EB00333802 /* Capsule */ = {
@@ -345,25 +377,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				801053162BC65AA100C042A8 /* AnimatableVector.swift in Sources */,
+				801577AC2BDC079300E53508 /* View+Extensions.swift in Sources */,
+				801577A82BDB9B5900E53508 /* LoadingButtonStyle.swift in Sources */,
 				8010531C2BC6C96200C042A8 /* PresentDetailView.swift in Sources */,
 				801053022BC538FD00C042A8 /* ScrollViewReaderView.swift in Sources */,
+				801577A42BDB8C5A00E53508 /* CapsuleProgressView.swift in Sources */,
 				80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */,
 				8010530B2BC5A19700C042A8 /* SearchView.swift in Sources */,
 				801053222BC6FB3400C042A8 /* HiddenModifier.swift in Sources */,
+				8015779C2BDB811000E53508 /* ButtonsView.swift in Sources */,
+				801577A62BDB8D8900E53508 /* CapsuleProgress2View.swift in Sources */,
 				80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */,
 				801053202BC6D9F900C042A8 /* PresentContainerView.swift in Sources */,
-				801053112BC645F600C042A8 /* View+Extensions.swift in Sources */,
+				801053112BC645F600C042A8 /* ViewAnim+Extensions.swift in Sources */,
 				8010531A2BC67D8900C042A8 /* PhaseAnimatorView.swift in Sources */,
 				801053182BC65B1C00C042A8 /* LineChart.swift in Sources */,
 				801052FC2BC532EF00C042A8 /* ViewThatFitsView.swift in Sources */,
 				80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */,
 				801052D42BC5119400C042A8 /* ContentView.swift in Sources */,
+				801577A02BDB824100E53508 /* MainButtonStyle.swift in Sources */,
+				801577AA2BDBF7AF00E53508 /* EncapsulateModifier.swift in Sources */,
 				801053062BC57E6B00C042A8 /* GestureView.swift in Sources */,
 				801053092BC5801900C042A8 /* TemplateView.swift in Sources */,
 				801053042BC57C2F00C042A8 /* RomanNumeralFormatter.swift in Sources */,
 				801052FE2BC5358000C042A8 /* GeometryReader3dView.swift in Sources */,
 				801053142BC6474800C042A8 /* AnimationView.swift in Sources */,
 				8010531E2BC6D95C00C042A8 /* DraggableModifier.swift in Sources */,
+				801577A22BDB88D900E53508 /* GlowModifier.swift in Sources */,
 				8010530D2BC5B45800C042A8 /* SearchWithTokenView.swift in Sources */,
 				801052D22BC5119400C042A8 /* ViewThatFitsApp.swift in Sources */,
 				80D775182BD03A0900333802 /* CapsuleView.swift in Sources */,
