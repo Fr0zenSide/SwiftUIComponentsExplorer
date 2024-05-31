@@ -100,9 +100,32 @@ struct PresentToastView: View {
     
     // MARK: - tab III
     
+    @State var toast: ToastModel? = nil
     @ViewBuilder
     var testCase3: some View {
-        EmptyView()
+        VStack {
+            Spacer()
+            
+            ForEach(ToastStyle.allCases, id: \.self) { style in
+                Button("Show new \(style) toast") {
+                    if toast != nil {
+                        withAnimation {
+                            toast = nil
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                toast = ToastModel(type: style, title: "Toast title", message: "Toast message")
+                            }
+                        }
+                        
+                        return
+                    }
+                    toast = ToastModel(type: style, title: "Toast title", message: "Toast message")
+                }
+                .padding()
+            }
+            
+            Spacer()
+        }
+        .toastView($toast)
     }
     
     

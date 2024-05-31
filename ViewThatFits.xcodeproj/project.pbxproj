@@ -40,6 +40,10 @@
 		801577AA2BDBF7AF00E53508 /* EncapsulateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */; };
 		801577AC2BDC079300E53508 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577AB2BDC079300E53508 /* View+Extensions.swift */; };
 		801577AE2BDCD00300E53508 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577AD2BDCD00300E53508 /* BarProgressStyle.swift */; };
+		802B23CF2C09980F00E0CAB3 /* ToastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B23CA2C09980F00E0CAB3 /* ToastModel.swift */; };
+		802B23D02C09980F00E0CAB3 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B23CB2C09980F00E0CAB3 /* ToastModifier.swift */; };
+		802B23D12C09980F00E0CAB3 /* ToastStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B23CC2C09980F00E0CAB3 /* ToastStyle.swift */; };
+		802B23D22C09980F00E0CAB3 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B23CD2C09980F00E0CAB3 /* ToastView.swift */; };
 		80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775022BC92BF600333802 /* Binding+Extensions.swift */; };
 		80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775042BC9929800333802 /* HeaderAndScrollView.swift */; };
 		80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775142BCFFADE00333802 /* PresentToastView.swift */; };
@@ -100,6 +104,10 @@
 		801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncapsulateModifier.swift; sourceTree = "<group>"; };
 		801577AB2BDC079300E53508 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../../../../23 - Mayafit/Maya/MayaFit/Core/Tools/Extensions/View+Extensions.swift"; sourceTree = "<group>"; };
 		801577AD2BDCD00300E53508 /* BarProgressStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		802B23CA2C09980F00E0CAB3 /* ToastModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModel.swift; sourceTree = "<group>"; };
+		802B23CB2C09980F00E0CAB3 /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		802B23CC2C09980F00E0CAB3 /* ToastStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastStyle.swift; sourceTree = "<group>"; };
+		802B23CD2C09980F00E0CAB3 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		80D775022BC92BF600333802 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		80D775042BC9929800333802 /* HeaderAndScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndScrollView.swift; sourceTree = "<group>"; };
 		80D775142BCFFADE00333802 /* PresentToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentToastView.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 				801053212BC6FB3400C042A8 /* HiddenModifier.swift */,
 				80D775022BC92BF600333802 /* Binding+Extensions.swift */,
 				80D775162BD039EB00333802 /* Capsule */,
+				802B23CE2C09980F00E0CAB3 /* Toast */,
 				801577A12BDB88D900E53508 /* GlowModifier.swift */,
 				801577A32BDB8C5A00E53508 /* CapsuleProgressView.swift */,
 				801577A52BDB8D8900E53508 /* CapsuleProgress2View.swift */,
@@ -239,6 +248,17 @@
 				801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		802B23CE2C09980F00E0CAB3 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				802B23CA2C09980F00E0CAB3 /* ToastModel.swift */,
+				802B23CB2C09980F00E0CAB3 /* ToastModifier.swift */,
+				802B23CC2C09980F00E0CAB3 /* ToastStyle.swift */,
+				802B23CD2C09980F00E0CAB3 /* ToastView.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		80D775162BD039EB00333802 /* Capsule */ = {
@@ -384,19 +404,23 @@
 				801577A82BDB9B5900E53508 /* LoadingButtonStyle.swift in Sources */,
 				8010531C2BC6C96200C042A8 /* PresentDetailView.swift in Sources */,
 				801053022BC538FD00C042A8 /* ScrollViewReaderView.swift in Sources */,
+				802B23D12C09980F00E0CAB3 /* ToastStyle.swift in Sources */,
 				801577A42BDB8C5A00E53508 /* CapsuleProgressView.swift in Sources */,
 				80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */,
 				8010530B2BC5A19700C042A8 /* SearchView.swift in Sources */,
+				802B23D02C09980F00E0CAB3 /* ToastModifier.swift in Sources */,
 				801053222BC6FB3400C042A8 /* HiddenModifier.swift in Sources */,
 				8015779C2BDB811000E53508 /* ButtonsView.swift in Sources */,
 				801577A62BDB8D8900E53508 /* CapsuleProgress2View.swift in Sources */,
 				80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */,
 				801577AE2BDCD00300E53508 /* BarProgressStyle.swift in Sources */,
 				801053202BC6D9F900C042A8 /* PresentContainerView.swift in Sources */,
+				802B23D22C09980F00E0CAB3 /* ToastView.swift in Sources */,
 				801053112BC645F600C042A8 /* ViewAnim+Extensions.swift in Sources */,
 				8010531A2BC67D8900C042A8 /* PhaseAnimatorView.swift in Sources */,
 				801053182BC65B1C00C042A8 /* LineChart.swift in Sources */,
 				801052FC2BC532EF00C042A8 /* ViewThatFitsView.swift in Sources */,
+				802B23CF2C09980F00E0CAB3 /* ToastModel.swift in Sources */,
 				80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */,
 				801052D42BC5119400C042A8 /* ContentView.swift in Sources */,
 				801577A02BDB824100E53508 /* MainButtonStyle.swift in Sources */,
