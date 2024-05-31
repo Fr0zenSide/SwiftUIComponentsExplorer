@@ -169,6 +169,7 @@ struct ButtonsView: View {
         Button("Titou") {
             
             isLoadingTouched.toggle()
+            disableLoading()
         }
         .buttonStyle(.loading($isLoadingTouched))
     }
@@ -178,6 +179,7 @@ struct ButtonsView: View {
         Button("Titou") {
             
             isLoadingTouched.toggle()
+            disableLoading()
         }
         .buttonStyle(.loading($isLoadingTouched, backgroundShape: Capsule()))
 //        .disabled(true)
@@ -188,6 +190,7 @@ struct ButtonsView: View {
         Button("Titou") {
             
             isLoadingTouched.toggle()
+            disableLoading()
         }
         .buttonStyle(.loadingSec($isLoadingTouched))
     }
@@ -197,8 +200,18 @@ struct ButtonsView: View {
         Button("Titou") {
             
             isLoadingTouched.toggle()
+            disableLoading()
         }
         .buttonStyle(.loadingSec($isLoadingTouched, backgroundShape: Capsule(), maxHeight: 38))
+    }
+    
+    private func disableLoading() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+            
+            withAnimation {
+                isLoadingTouched = false
+            }
+        }
     }
     
     

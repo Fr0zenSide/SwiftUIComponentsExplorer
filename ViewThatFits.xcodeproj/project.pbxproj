@@ -39,6 +39,7 @@
 		801577A82BDB9B5900E53508 /* LoadingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */; };
 		801577AA2BDBF7AF00E53508 /* EncapsulateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */; };
 		801577AC2BDC079300E53508 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577AB2BDC079300E53508 /* View+Extensions.swift */; };
+		801577AE2BDCD00300E53508 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801577AD2BDCD00300E53508 /* BarProgressStyle.swift */; };
 		80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775022BC92BF600333802 /* Binding+Extensions.swift */; };
 		80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775042BC9929800333802 /* HeaderAndScrollView.swift */; };
 		80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775142BCFFADE00333802 /* PresentToastView.swift */; };
@@ -98,6 +99,7 @@
 		801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonStyle.swift; sourceTree = "<group>"; };
 		801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncapsulateModifier.swift; sourceTree = "<group>"; };
 		801577AB2BDC079300E53508 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../../../../23 - Mayafit/Maya/MayaFit/Core/Tools/Extensions/View+Extensions.swift"; sourceTree = "<group>"; };
+		801577AD2BDCD00300E53508 /* BarProgressStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
 		80D775022BC92BF600333802 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		80D775042BC9929800333802 /* HeaderAndScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndScrollView.swift; sourceTree = "<group>"; };
 		80D775142BCFFADE00333802 /* PresentToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentToastView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		8015779F2BDB822000E53508 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				801577AD2BDCD00300E53508 /* BarProgressStyle.swift */,
 				8015779D2BDB818E00E53508 /* MainButtonStyle.swift */,
 				801577A72BDB9B5900E53508 /* LoadingButtonStyle.swift */,
 				801577A92BDBF7AF00E53508 /* EncapsulateModifier.swift */,
@@ -388,6 +391,7 @@
 				8015779C2BDB811000E53508 /* ButtonsView.swift in Sources */,
 				801577A62BDB8D8900E53508 /* CapsuleProgress2View.swift in Sources */,
 				80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */,
+				801577AE2BDCD00300E53508 /* BarProgressStyle.swift in Sources */,
 				801053202BC6D9F900C042A8 /* PresentContainerView.swift in Sources */,
 				801053112BC645F600C042A8 /* ViewAnim+Extensions.swift in Sources */,
 				8010531A2BC67D8900C042A8 /* PhaseAnimatorView.swift in Sources */,
