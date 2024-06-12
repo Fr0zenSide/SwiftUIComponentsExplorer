@@ -47,7 +47,9 @@
 		80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775022BC92BF600333802 /* Binding+Extensions.swift */; };
 		80D775052BC9929800333802 /* HeaderAndScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775042BC9929800333802 /* HeaderAndScrollView.swift */; };
 		80D775152BCFFADE00333802 /* PresentToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775142BCFFADE00333802 /* PresentToastView.swift */; };
-		80D775182BD03A0900333802 /* CapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775172BD03A0900333802 /* CapsuleView.swift */; };
+		80F8AADA2C19476C0029BFC2 /* ToasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F8AAD92C19476C0029BFC2 /* ToasterView.swift */; };
+		80F8AADB2C194C420029BFC2 /* CapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D775172BD03A0900333802 /* CapsuleView.swift */; };
+		80F8AADD2C194CB00029BFC2 /* ToasterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F8AADC2C194CB00029BFC2 /* ToasterStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		80D775042BC9929800333802 /* HeaderAndScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAndScrollView.swift; sourceTree = "<group>"; };
 		80D775142BCFFADE00333802 /* PresentToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentToastView.swift; sourceTree = "<group>"; };
 		80D775172BD03A0900333802 /* CapsuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleView.swift; sourceTree = "<group>"; };
+		80F8AAD92C19476C0029BFC2 /* ToasterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToasterView.swift; sourceTree = "<group>"; };
+		80F8AADC2C194CB00029BFC2 /* ToasterStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToasterStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 				8010531F2BC6D9F900C042A8 /* PresentContainerView.swift */,
 				801053212BC6FB3400C042A8 /* HiddenModifier.swift */,
 				80D775022BC92BF600333802 /* Binding+Extensions.swift */,
+				80F8AAD62C19471F0029BFC2 /* Toaster */,
 				80D775162BD039EB00333802 /* Capsule */,
 				802B23CE2C09980F00E0CAB3 /* Toast */,
 				801577A12BDB88D900E53508 /* GlowModifier.swift */,
@@ -267,6 +272,15 @@
 				80D775172BD03A0900333802 /* CapsuleView.swift */,
 			);
 			path = Capsule;
+			sourceTree = "<group>";
+		};
+		80F8AAD62C19471F0029BFC2 /* Toaster */ = {
+			isa = PBXGroup;
+			children = (
+				80F8AADC2C194CB00029BFC2 /* ToasterStyle.swift */,
+				80F8AAD92C19476C0029BFC2 /* ToasterView.swift */,
+			);
+			path = Toaster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +425,7 @@
 				802B23D02C09980F00E0CAB3 /* ToastModifier.swift in Sources */,
 				801053222BC6FB3400C042A8 /* HiddenModifier.swift in Sources */,
 				8015779C2BDB811000E53508 /* ButtonsView.swift in Sources */,
+				80F8AADD2C194CB00029BFC2 /* ToasterStyle.swift in Sources */,
 				801577A62BDB8D8900E53508 /* CapsuleProgress2View.swift in Sources */,
 				80D775032BC92BF600333802 /* Binding+Extensions.swift in Sources */,
 				801577AE2BDCD00300E53508 /* BarProgressStyle.swift in Sources */,
@@ -433,8 +448,9 @@
 				8010531E2BC6D95C00C042A8 /* DraggableModifier.swift in Sources */,
 				801577A22BDB88D900E53508 /* GlowModifier.swift in Sources */,
 				8010530D2BC5B45800C042A8 /* SearchWithTokenView.swift in Sources */,
+				80F8AADB2C194C420029BFC2 /* CapsuleView.swift in Sources */,
+				80F8AADA2C19476C0029BFC2 /* ToasterView.swift in Sources */,
 				801052D22BC5119400C042A8 /* ViewThatFitsApp.swift in Sources */,
-				80D775182BD03A0900333802 /* CapsuleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

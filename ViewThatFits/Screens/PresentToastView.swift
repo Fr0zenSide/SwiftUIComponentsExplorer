@@ -11,7 +11,7 @@ extension PresentToastView {
     fileprivate enum TestCases: Int, Identifiable, CustomStringConvertible, CaseIterable {
         var id: Int { rawValue }
         
-        case first, second, third//, fourth, fifth, sixth, seventh, eighth, ninth
+        case first, second, third, fourth//, fifth, sixth, seventh, eighth, ninth
         
         var description: String {
             let index = Self.allCases.firstIndex(of: self)!
@@ -33,8 +33,8 @@ struct PresentToastView: View {
                 testCase2
             case .third:
                 testCase3
-////            case .fourth:
-////                testCase4
+            case .fourth:
+                testCase4
 ////            case .fifth:
 ////                testCase5
 ////            case .sixth:
@@ -131,9 +131,24 @@ struct PresentToastView: View {
     
     // MARK: - tab IV
     
+    @State var toasters: [ToasterModel] = []
     @ViewBuilder
     var testCase4: some View {
-        EmptyView()
+        VStack {
+            Spacer()
+            
+            ForEach(ToasterStyle.allCases) { style in
+                Button("Show new \(style) toaster") {
+                    
+                    let toast = ToasterModel(type: style, title: "Toast title", description: "Toast message", hasUserInteractionEnabled: true)
+                    toasters.append(toast)
+                }
+                .padding()
+            }
+            
+            Spacer()
+        }
+        .toaster($toasters)
     }
     
     
